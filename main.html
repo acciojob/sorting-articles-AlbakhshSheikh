@@ -40,7 +40,7 @@
 </head>
 
 <body>
-    <ul id="band"></ul>
+    <ul id="bands"></ul>
 
     <script>
         const bands = [
@@ -50,19 +50,18 @@
             'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
         ];
 
-        // Helper function to strip "a", "an", "the" for sorting
         function stripArticle(band) {
             return band.replace(/^(a |an |the )/i, '').trim();
         }
 
-        // Sort ignoring articles
         const sortedBands = bands.sort((a, b) =>
             stripArticle(a).localeCompare(stripArticle(b))
         );
 
-        const ul = document.getElementById('band');
+        const ul = document.getElementById('bands');
         ul.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
     </script>
+
 </body>
 
 </html>
